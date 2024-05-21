@@ -1,52 +1,170 @@
-<!-- We must always begin with an HTML label to show the browser that this is a document with an HTML format. -->
-<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-        <script src="https://kit.fontawesome.com/b3e4c928fa.js" crossorigin="anonymous"></script>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-        <title>Instagram Feed</title>
-    </head>
-    <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+    <script src="https://kit.fontawesome.com/b3e4c928fa.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Instagram Feed</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container-fluid">
-            <div class="row">
-                <div class="post">
-                    <div class="post-header">
-                        <div class="header-logo"> 
-                            <i class="fab fa-instagram"></i>
-                            <span>Instagram</span>
-                        </div>
-                        <div>
-                            <button type="button" class="btn btn-success">Create new post</button>
-                            <button type="button" class="btn btn-secondary"><i class="fas fa-cog"></i> <i class="fas fa-caret-down"></i></button>
+            <a class="navbar-brand" href="#">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+            <form class="d-flex d-grid gap-3">
+                <!-- <button class="btn btn-success">Create New Post!</button> -->
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Create New Post!
+                </button>
+
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Create New Post</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <p><b>
+                                        Create Caption:
+                                    </b>
+                                </p>
+                                <input type="text" class="form-control" id="description" aria-describedby="description">
+                                <br>
+                                <button class="btn btn-secondary"><i class="fas fa-camera"></i></button>
+                                <button class="btn btn-secondary"><i class="fas fa-map-marker-alt"></i></button>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Save changes</button>
+                            </div>
                         </div>
                     </div>
-                    <div class="post-img">
-                        <img src="https://www.maldivas.net/f/maldivas/maldivas/guia/que-hacer-m.jpg">
+                </div>
+
+
+                <button class="btn btn-secondary dropwdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+                    type="button"><i class="fas fa-cog"></i></button>
+
+
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Accesibility</a></li>
+                    <li><a class="dropdown-item" href="#">Privacy and Data</a></li>
+                    <li>
+                        <hr class="dropdown-divider">
+                    </li>
+                    <li><a class="dropdown-item" href="#">Log Out!</a></li>
+                </ul>
+                </li>
+            </form>
+        </div>
+    </nav>
+
+    <ul class="nav nav-tabs d-flex justify-content-center" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button"
+                role="tab" aria-controls="home" aria-selected="true"><i class="fas fa-th"></i></button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button"
+                role="tab" aria-controls="profile" aria-selected="false"><i class="far fa-square"></i></button>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+            </br>
+            <div class="container">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="https://content.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg"
+                            width="100%" height="100%">
                     </div>
-                    <div class="post-icon">
-                        <div class="left-icon">
-                            <i class="far fa-heart"></i>
-                            <i class="far fa-comment"></i>
-                            <i class="far fa-paper-plane"></i>
-                        </div>
-                        <div class class="right-icon">
-                            <i class="far fa-bookmark"></i>
-                        </div>
+                    <div class="col-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYkpijq0upkUI8K9uo7_0d89LJJYQeqEyNgkUcCItXkw&s"
+                            width="100%" height="100%">
                     </div>
-                    <div class="post-body">
-                        <p class="like">
-                            Le gusto a <span>Daniel Perdomo, Micaela Alcaire, Luis Madero</span> y <span>99 otros</span>
-                        </p>
-                        <p class="some-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                            Totam fuga praesentium repellat voluptatum. Deserunt iste architecto est minus perferendis 
-                            eum amet rerum eveniet neque quam nihil ipsam suscipit, quae quo.
-                        </p>
+                    <div class="col-4">
+                        <img src="https://media.ambito.com/p/1b59752d6d4bd2092877612106b67da3/adjuntos/239/imagenes/040/757/0040757540/cataratas.jpg"
+                            width="100%" height="100%">
+                    </div>
+                </div>
+                </br>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="https://media.ambito.com/p/8d9529500cd0228a37692bae1d328f36/adjuntos/239/imagenes/041/194/0041194335/maserati_mc20.jpg"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0GcBDqTn36xtLY8c8aSIhErWi3fanXXm7tTRvv5eCqA&s"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://discouy.vtexassets.com/arquivos/ids/1770579/Caramelos-Surtidos-SUGUS-150-g-0.jpg?v=638507818481430000"
+                            width="100%" height="100%">
+                    </div>
+                </div>
+                </br>
+                <div class="row">
+                    <div class="col-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8_B0zPLNLGCb9KRnu_4IvUVpkpmUSzIJTzAWqeERTWg&s"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHYwNG3OTu1E14dD76qeJtV-tEKYl7xKdTOSvtH-vW1g&s"
+                            width="100%" height="100%">
+                    </div>
+                    <div class="col-4">
+                        <img src="https://resizing.flixster.com/Zdvk-xZ3cN7uIJGvqPcuAijAb1U=/ems.cHJkLWVtcy1hc3NldHMvdHZzZXJpZXMvOWQyNzdiMGEtZmZhYi00YmZjLTkxZDktNDFlMjFhNjZkZmYwLmpwZw=="
+                            width="100%" height="100%">
                     </div>
                 </div>
             </div>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    </body>
+        </div>
+
+        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+            </br>
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+
+                    </div>
+                    <div class="col">
+                        <div class="card" style="width: 18rem;">
+                            <ul class="list-group  list-group-flush">
+                                <li class="list-group-item">Baje a la playa</li>
+                                <li class="list-group-item">
+                                    <img src="https://content.nationalgeographic.com.es/medio/2018/02/27/playa-de-isuntza-lekeitio__1280x720.jpg"
+                                        class="card-img-top">
+                                </li>
+                                <li class="list-group-item" style="border: none">A <strong>256</strong> les gusta
+                                    esto</li>
+                                <li class="list-group-item"> Una pasada por la playa, para romper la rutina</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+</body>
+
 </html>
